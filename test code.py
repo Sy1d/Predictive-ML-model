@@ -14,7 +14,7 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.svm import SVC
 
 # loading the dataset
-data = pd.read_csv("C:\\Users\\encry\\Desktop\\cw1-ai\\TUDA-Reduced.csv")
+data = pd.read_csv("Location here")
 
 ## Start of Data handling 
 
