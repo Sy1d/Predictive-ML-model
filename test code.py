@@ -72,7 +72,7 @@ selected_features = [
 ]
 
 # Save cleaned dataset
-data.to_csv("C:\\Users\\encry\\Desktop\\cw1-ai\\cleaned_dataset.csv", index=False)
+data.to_csv("cleaned_dataset.csv", index=False)
 
 ## Visualising dataset 
 # First, check which columns actually exist in our dataset
@@ -110,7 +110,7 @@ if len(actual_important_features) >= 2:
     sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", linewidths=0.5)
     plt.title("Heatmap of Correlations Between Selected Features")
     plt.tight_layout()
-    plt.savefig("C:\\Users\\encry\\Desktop\\cw1-ai\\correlation_heatmap.png")
+    plt.savefig("correlation_heatmap.png")
     plt.close()  # Close to avoid displaying in non-interactive environments
     print("Correlation heatmap saved")
     
@@ -118,7 +118,7 @@ if len(actual_important_features) >= 2:
     pairplot = sns.pairplot(data[actual_important_features], diag_kind="kde")
     pairplot.fig.suptitle("Pairplot of Selected Features", y=1.02)
     plt.tight_layout()
-    pairplot.savefig("C:\\Users\\encry\\Desktop\\cw1-ai\\pairplot.png")
+    pairplot.savefig("pairplot.png")
     plt.close()
     print("Pairplot saved")
     
@@ -128,7 +128,7 @@ if len(actual_important_features) >= 2:
     plt.title("Boxplot of Selected Features")
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig("C:\\Users\\encry\\Desktop\\cw1-ai\\boxplot.png")
+    plt.savefig("boxplot.png")
     plt.close()
     print("Boxplot saved")
     
@@ -142,7 +142,7 @@ if len(actual_important_features) >= 2:
         sns.scatterplot(data=data, x=x_col, y=y_col, hue=hue_col, palette="coolwarm")
         plt.title(f"Scatterplot of {x_col} vs {y_col} (colored by {hue_col})")
         plt.tight_layout()
-        plt.savefig("C:\\Users\\encry\\Desktop\\cw1-ai\\scatterplot.png")
+        plt.savefig("scatterplot.png")
         plt.close()
         print("Scatterplot saved")
 else:
@@ -180,7 +180,7 @@ plt.step(range(1, len(explained_variance) + 1), np.cumsum(explained_variance), w
 plt.ylabel('Explained Variance Ratio')
 plt.xlabel('Principal Components')
 plt.title('Explained Variance by Components')
-plt.savefig("C:\\Users\\encry\\Desktop\\cw1-ai\\pca_variance.png")
+plt.savefig("pca_variance.png")
 plt.close()
 print("PCA variance plot saved")
 
@@ -200,7 +200,7 @@ pca_df = pd.DataFrame(
 )
 
 # Save PCA results
-pca_df.to_csv("C:\\Users\\encry\\Desktop\\cw1-ai\\pca_results.csv", index=False)
+pca_df.to_csv("pca_results.csv", index=False)
 print("PCA results saved to CSV")
 
 # For this example, I'll use 'Cognitive_Status' if it exists, but you should replace this with your actual target
@@ -266,7 +266,7 @@ def evaluate_model(model, X_train, X_test, y_train, y_test, model_name, feature_
     plt.title(f'Confusion Matrix - {model_name} with {feature_type} features')
     plt.ylabel('True Label')
     plt.xlabel('Predicted Label')
-    plt.savefig(f"C:\\Users\\encry\\Desktop\\cw1-ai\\cm_{model_name}_{feature_type}.png")
+    plt.savefig(f"C:cm_{model_name}_{feature_type}.png")
     plt.close()
     
     # Detailed classification report
@@ -299,7 +299,7 @@ for model_name, model in models.items():
 results_df = pd.DataFrame(results)
 print("\nModel Comparison Summary:")
 print(results_df)
-results_df.to_csv("C:\\Users\\encry\\Desktop\\cw1-ai\\model_comparison_results.csv", index=False)
+results_df.to_csv("model_comparison_results.csv", index=False)
 
 
 
